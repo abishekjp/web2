@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Your Feedback Matters!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            max-width: 600px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        img {
+            border-radius: 8px;
+        }
+
+        input, textarea, select, button {
+            margin: 10px 0;
+            padding: 10px;
+            width: 90%;
+            max-width: 400px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        #thank-you-message {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="css.jpg" alt="Customer Service Representative" width="250" height="200">
+            <h1>Customer Satisfaction Survey</h1>
+            <p>We'd love to hear about your experience with our service.</p>
+        </div>
+        
+        <form id="survey-form">
+            <p>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+            </p>
+            
+            <p>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+            </p>
+            
+            <p>
+                <label for="rate">How would you rate your overall experience (1-10)?</label><br>
+                <input type="number" min="1" max="10" id="rate" name="rate" placeholder="Your rating (1-10)" required>
+            </p>
+            
+            <p>
+                <label for="dropdown">How did you first learn about us?</label><br>
+                <select id="dropdown" name="referral" required>
+                    <option value="">Select an option</option>
+                    <option value="google">Google Search</option>
+                    <option value="facebook">Social Media (e.g., Facebook, Instagram)</option>
+                    <option value="viral">Friend/Word of Mouth</option>
+                    <option value="other">Other (Please specify below)</option>
+                </select>
+            </p>
+            
+            <p>Which of our services have you used?</p>
+            <div>
+                <input type="checkbox" id="web-design-service" value="web-design" name="services">
+                <label for="web-design-service">Web Design</label><br>
+                
+                <input type="checkbox" id="seo-service" value="seo" name="services">
+                <label for="seo-service">SEO Optimization</label>
+            </div>
+            
+            <p>
+                <label for="comments">Any other thoughts or suggestions for us?</label><br>
+                <textarea id="comments" name="comments" rows="5" placeholder="Tell us what you think!"></textarea>
+            </p>
+
+            <p>
+                <button type="submit">Send Your Feedback</button>
+            </p>
+        </form>
+
+        <div id="thank-you-message">
+            <h2>Thank You for Your Feedback!</h2>
+            <p>We truly appreciate you taking the time to complete our survey.</p>
+            <p>Your insights are invaluable as we strive to improve our services and ensure your satisfaction.</p>
+            <img src="customer thanks.jpg" alt="Thank you illustration" width="250" height="200">
+            <p style="margin-top: 20px;">We'll use your responses to serve you better in the future!</p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const surveyForm = document.getElementById('survey-form');
+            const thankYouMessage = document.getElementById('thank-you-message');
+
+            surveyForm.addEventListener('submit', function(event) {
+                event.preventDefault(); 
+                setTimeout(() => {
+                    surveyForm.style.display = 'none'; 
+                    thankYouMessage.style.display = 'block'; 
+                }, 500); 
+            });
+        });
+    </script>
+</body>
+</html>
